@@ -1,0 +1,22 @@
+<div [class]="loading?'body-x loading-x':'body-x'">
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form [formGroup]="form">
+        <h3>AdeA</h3>
+
+        <label for="username">Usuario</label>
+        <input type="text" formControlName="user" id="username">
+
+        <label for="password">Contraseña</label>
+        <input type="password" formControlName="password" id="password">
+
+        <div class="col-md-12 d-flex justify-content-center align-items-center">
+            <div class="col-md-2">
+                <button mat-raised-button color="primary" (click)="login()" [disabled]="form.invalid">Aceptar</button>
+            </div>
+        </div>
+
+    </form>
+</div>

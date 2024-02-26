@@ -1,0 +1,66 @@
+.app-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    height: 7vh;
+    background-color: var(--menu-toolbar);
+    color: var(--menu-text-color);
+  }
+  
+  .app-bar .title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .content-x {
+    height: 100%;
+    width: 100vw;
+    background-color: var(--menu-container);
+    margin-top: 6vh;
+    position: fixed;
+  }
+  
+  .work-area {
+    padding-top: 25px;
+    padding-bottom: 15px;
+    height: 94vh;
+    width: 100%;
+    overflow-y: auto;
+  }
+  
+  .mat-toolbar {
+    background: var(--text-color);
+    color: #aaa;
+  }
+  
+  .menu-items {
+    height: 100% !important;
+  }
+  
+  .title-item-x {
+    padding-bottom: 15px;
+    margin-left: 25px !important;
+  }
+  
+  .menu-item-x {
+    width: 120px;
+    font-size: 14px;
+    padding-bottom: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-bottom: 4px solid var(--menu-toolbar);
+    border-radius: 5px;
+  }
+  
+  .menu-item-x:hover {
+    border-bottom: 4px solid var(--menu-item-x-hoover);
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .menu-item-x.active {
+    border-bottom: 4px solid var( --menu-item-x-active);
+  }

@@ -1,0 +1,86 @@
+<div >
+    <form [formGroup]="form">
+        <div class="row g-2 ">
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Usuario de Acceso</mat-label>
+                    <input matInput appText formControlName="login" maxlength="20" autocomplete="off">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput appText formControlName="password" type="password" maxlength="20" autocomplete="off">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row g-2">
+            <div class="col-md-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput appText formControlName="name" maxlength="20" autocomplete="off">
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>Apellido Paterno</mat-label>
+                    <input matInput appText formControlName="paternal" maxlength="20" autocomplete="off">
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>Apellido Materno</mat-label>
+                    <input matInput  appText formControlName="maternal" maxlength="20" autocomplete="off">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row g-2">
+            <div class="col-md-7">
+                <mat-form-field appearance="outline">
+                    <mat-label>Correo</mat-label>
+                    <input matInput formControlName="email" maxlength="20" autocomplete="off">
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-5">
+                <mat-form-field appearance="outline" (click)="endDate.open()" class="hand-x">
+                    <mat-label>Fecha de Vigencia</mat-label>
+                    <input matInput [matDatepicker]="endDate" [min]="minDate" formControlName="endDate" readonly>
+                    <mat-datepicker-toggle matIconSuffix [for]="endDate"></mat-datepicker-toggle>
+                    <mat-datepicker #endDate></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row g-2">
+            <div class="col-md-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>Cliente</mat-label>
+                    <input matInput appNumeric formControlName="client" maxlength="20" autocomplete="off">
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>Area</mat-label>
+                    <input matInput appNumeric formControlName="area" maxlength="20" autocomplete="off">
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>No. Acceso</mat-label>
+                    <input matInput appNumeric formControlName="access" maxlength="20" autocomplete="off">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="col-md-12 pt-4 d-flex justify-content-center align-items-center">
+            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                <button mat-raised-button color="primary" (click)="back()">Regresar</button>
+            </div>
+            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                <button mat-raised-button color="primary" [disabled]="form.invalid"
+                (click)="next()">Siguiente</button>
+            </div>               
+        </div>       
+    </form>
+</div>

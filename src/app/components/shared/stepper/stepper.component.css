@@ -1,0 +1,69 @@
+
+.steps-progressbar>ul {
+    display: table;
+    table-layout: fixed;
+    border-collapse: separate;
+    margin: 0px 0px 8px;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    color: var(--steps-color);
+    font-size: 13px;
+    font-weight: 500;
+  }
+  
+  .steps-progressbar>ul>li {
+    position: relative;
+    display: table-cell;
+    list-style-type: none;
+    text-align: center;
+  }
+  
+  .steps-progressbar>ul>li:before {
+    position: inherit;
+    display: block;
+    margin: -25px auto 5px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #EDEDED;
+    border-radius: 50%;
+    background-color: #fff;
+    line-height: 30px;
+    content: " ";
+    z-index: 1;
+  }
+  
+  .steps-progressbar>ul>li:after {
+    position: absolute;
+    top: -12px;
+    right: 50%;
+    width: 100%;
+    height: 6px;
+    box-shadow: inset 0 0 5px #F2F8FC;
+    background-color: #E3E3E3;
+    content: " ";
+    z-index: 0;
+  }
+  
+  .steps-progressbar>ul>li:first-child:after {
+    content: none;
+  }
+  
+  .steps-progressbar>ul>li.active:before,
+  .steps-progressbar>ul>li.previous:before {
+    border-color: var(--steps-color);
+    background-color: var(--steps-color);
+  }
+  
+  .steps-progressbar>ul>li.active:after,
+  .steps-progressbar>ul>li.previous:after {
+    box-shadow: none;
+    background-color: var(--steps-color);
+  }
+  
+  .steps-progressbar>ul>li.active:before {
+    margin-top: 0;
+    margin-bottom: 10px;
+    width: 30px;
+    height: 30px;
+  }

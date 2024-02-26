@@ -1,0 +1,94 @@
+<div class="d-flex justify-content-center">
+    <div class="panel-x col-md-9 border mat-elevation-z2">
+
+        <form [formGroup]="form">
+            <div class="row g-2">
+                <div class="col-md-4">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput formControlName="name" maxlength="150" autocomplete="off">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Fecha de Alta</mat-label>
+                        <mat-date-range-input [rangePicker]="date">
+                            <input matStartDate formControlName="date1" readonly>
+                            <input matEndDate formControlName="date2" readonly>
+                        </mat-date-range-input>
+                        <mat-datepicker-toggle matIconSuffix [for]="date"></mat-datepicker-toggle>
+                        <mat-date-range-picker #date></mat-date-range-picker>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-2">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Estatus</mat-label>
+                        <mat-select formControlName="status">
+                            <mat-option value="X">Todos</mat-option>
+                            <mat-option value="A">Activo</mat-option>
+                            <mat-option value="B">Inactivo</mat-option>
+                            <mat-option value="R">Revocado</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row g-2">
+                <div class="col-md-12 d-flex justify-content-center align-items-center">
+                    <div class="col-md-2">
+                        <button mat-raised-button color="primary" [disabled]="form.invalid"
+                            (click)="loadUsers()">Buscar</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-end">
+                <button mat-mini-fab color="primary" (click)="addUser()">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="row pt-2 g-2 d-flex justify-content-center">
+            <div class="col-md-12 d-flex justify-content-center p-0">
+                <div class="col-md-12 table-responsive">
+                    <table class="table table-bordered table-sm table-x" aria-describedby="users">
+                        <thead>
+                            <tr class="head" style="height: 50px;">
+                                <th scope="col">Login</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Fecha de Alta</th>
+                                <th scope="col">Estatus</th>
+                                <th scope="col">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (item of users; track $index) {
+                            <tr
+                                [class]="$index%2==0?'table-report-row align-middle':'table-report-row align-middle table-report-row-1'">
+                                <td class="align-middle text-center">{{item.login}}</td>
+                                <td class="align-middle text-center">{{item.name}}</td>
+                                <td class="align-middle text-center">{{item.startDate | date:' dd/MM/yyyy hh:mm:ss'}}
+                                </td>
+                                <td class="align-middle text-center">{{item.status}}</td>
+                                <td class="align-middle text-center">
+                                    <button mat-icon-button (click)="editUser(item.login)">
+                                        <mat-icon>edit</mat-icon>
+                                    </button>
+                                    @if (item.status=='A') {
+                                    <button mat-icon-button (click)="revoketUser(item.login)">
+                                        <mat-icon>block</mat-icon>
+                                    </button>
+                                    }
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

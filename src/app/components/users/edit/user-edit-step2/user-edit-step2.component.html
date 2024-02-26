@@ -1,0 +1,72 @@
+<div class="row g-2">
+    <div class="col-md-6 d-flex justify-content-end">
+        Usuario de Acceso:
+    </div>
+    <div class="col-md-6">
+        {{user.login}}        
+    </div>
+</div>
+<div class="row g-2">
+    <div class="col-md-6 d-flex justify-content-end">
+        Contraseña:
+    </div>
+    <div class="col-md-6">
+        {{getPassword()}}        
+    </div>
+</div>
+<div class="row g-2">
+    <div class="col-md-6 d-flex justify-content-end">
+        Nombre:
+    </div>
+    <div class="col-md-6">
+        {{getName()}}        
+    </div>
+</div>
+<div class="row g-2">
+    <div class="col-md-6 d-flex justify-content-end">
+        Correo:
+    </div>
+    <div class="col-md-6">
+        {{user.email}}        
+    </div>
+</div>
+<div class="row g-2">
+    <div class="col-md-6 d-flex justify-content-end">
+        Cliente:
+    </div>
+    <div class="col-md-6">
+        {{user.client}}        
+    </div>
+</div>
+<div class="row g-2">
+    <div class="col-md-6 d-flex justify-content-end">
+        Area:
+    </div>
+    <div class="col-md-6">
+        {{user.area}}        
+    </div>
+</div>
+<div class="row g-2">
+    <div class="col-md-6 d-flex justify-content-end">
+        Fecha de Vigencia:
+    </div>
+    <div class="col-md-6">
+        {{getDate() | date:'dd/MM/yyyy'}}        
+    </div>
+</div>
+<div class="row g-2">
+    <div class="col-md-6 d-flex justify-content-end">
+        Acceso:
+    </div>
+    <div class="col-md-6">
+        {{user.access}}        
+    </div>
+</div>
+<div class="col-md-12 pt-4 d-flex justify-content-center align-items-center">
+    <div class="col-md-3 d-flex justify-content-center align-items-center">
+        <button mat-raised-button color="primary" (click)="back()">Regresar</button>
+    </div>
+    <div class="col-md-3 d-flex justify-content-center align-items-center">
+        <button mat-raised-button color="primary" (click)="next()" >Siguiente</button>
+    </div>   
+</div>

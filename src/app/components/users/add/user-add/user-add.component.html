@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-center ">
+    <div class="panel-x col-md-6 border mat-elevation-z2 ">
+
+      <app-stepper [index]="view"></app-stepper>
+
+        @if (view==1) {
+        <app-user-add-step1 (backEvent)="list()" (nextEvent)="step2($event)"></app-user-add-step1>
+        }
+        @else if (view==2){
+        <app-user-add-step2 (backEvent)="step1()" (nextevent)="step3()" [user]="user"></app-user-add-step2>
+        }
+        @else if (view==3){
+        <app-user-add-step3 (nextEvent)="list()" [user]="user"></app-user-add-step3>
+        }
+
+    </div>
+</div>

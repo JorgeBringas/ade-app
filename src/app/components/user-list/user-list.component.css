@@ -1,0 +1,13 @@
+.table-report-row {
+    height: 35px;
+    ;
+}
+
+.table-report-row:hover {
+    height: 35px;
+    background-color: #ffcccb;
+}
+
+.table-report-row-1{
+    background-color: #f5dddc;
+}
